@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Writer's Spectrum</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HEADER ahaha -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <h1>The Writer's Spectrum</h1>
+        </div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#categories">Categories</a>
+          <a href="#upload">Upload</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Welcome to The Writer's Spectrum</h2>
+      <p>Read, share, and rate inspiring literary works.</p>
+      <button id="explore-btn" class="cta-button">Explore Now</button>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section id="categories" class="categories">
+    <h2>Literary Categories</h2>
+    <div class="category-tabs">
+      <button class="tab-button active" data-category="poetry">Poetry</button>
+      <button class="tab-button" data-category="fiction">Fiction</button>
+      <button class="tab-button" data-category="non-fiction">Non-Fiction</button>
+      <button class="tab-button" data-category="essays">Essays</button>
+      <button class="tab-button" data-category="short-story">Short Story</button>
+      <button class="tab-button" data-category="fable">Fable</button>
+    </div>
+
+    <div id="poetry" class="category-content active works-grid"></div>
+    <div id="fiction" class="category-content works-grid"></div>
+    <div id="non-fiction" class="category-content works-grid"></div>
+    <div id="essays" class="category-content works-grid"></div>
+    <div id="short-story" class="category-content works-grid"></div>
+    <div id="fable" class="category-content works-grid"></div>
+  </section>
+
+  <!-- UPLOAD -->
+  <section id="upload" class="upload">
+    <h2>Share Your Literary Work</h2>
+    <form id="upload-form" class="upload-form">
+      <div class="form-group">
+        <label for="work-title">Title</label>
+        <input type="text" id="work-title" required />
+      </div>
+      <div class="form-group">
+        <label for="work-author">Author Name</label>
+        <input type="text" id="work-author" required />
+      </div>
+      <div class="form-group">
+        <label for="work-category">Category</label>
+        <select id="work-category" required>
+          <option value="">Select</option>
+          <option value="poetry">Poetry</option>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-Fiction</option>
+          <option value="essays">Essays</option>
+          <option value="short-story">Short Story</option>
+          <option value="fable">Fable</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="work-content">Content</label>
+        <textarea id="work-content" rows="8" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="work-cover">Cover Image  (URL)</label>
+        <input type="url" id="work-cover" />
+      </div>
+      <button type="submit" class="submit-button">Upload Work</button>
+    </form>
+  </section>
+
+  <!-- MODAL -->
+  <div id="work-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-details"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 The Writer's Spectrum. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
