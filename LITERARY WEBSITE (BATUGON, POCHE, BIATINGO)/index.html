@@ -100,7 +100,34 @@
       <div id="modal-details"></div>
     </div>
   </div>
+<!-- ADDED LOGIN & REGISTER MODALS -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="email" id="login-email" placeholder="Email" required />
+        <input type="password" id="login-password" placeholder="Password" required />
+        <button type="submit" class="submit-button">Login</button>
+      </form>
+    </div>
+  </div>
 
+  <div id="register-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Register</h2>
+      <form id="register-form">
+        <input type="text" id="register-name" placeholder="Full Name" required />
+        <input type="email" id="register-email" placeholder="Email" required />
+        <input type="password" id="register-password" placeholder="Password" required />
+        <button type="submit" class="submit-button">Create Account</button>
+      </form>
+    </div>
+  </div>
+  <!-- END -->
+
+  
   <footer>
     <p>&copy; 2025 The Writer's Spectrum. All rights reserved.</p>
   </footer>
@@ -108,4 +135,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
