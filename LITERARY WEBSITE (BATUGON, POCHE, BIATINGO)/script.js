@@ -68,6 +68,12 @@ const categorySections = document.querySelectorAll(".category-content");
 const modal = document.getElementById("work-modal");
 const modalDetails = document.getElementById("modal-details");
 const closeModal = modal.querySelector(".close");
+const loginBtn = document.getElementById("login-btn");
+const registerBtn = document.getElementById("register-btn");
+const loginModal = document.getElementById("login-modal");
+const registerModal = document.getElementById("register-modal");
+
+
 
 // --- LOAD WORKS INTO CATEGORIES ---
 function loadWorks(category) {
@@ -160,3 +166,49 @@ function addComment(category, index) {
   localStorage.setItem(`comments-${key}`, JSON.stringify(comments));
   openModal(category, index);
 }
+
+// Navbar welcome message element
+const navContainer = document.querySelector(".nav-links");
+
+// LOGIN FORM
+document.getElementById("login-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+  const email = document.getElementById("login-email").value;
+  alert("Login successful! (Demo only)");
+  loginModal.style.display = "none";
+
+  // Hide login/register buttons
+  loginBtn.style.display = "none";
+  registerBtn.style.display = "none";
+
+  // Show welcome message
+  const welcomeMsg = document.createElement("span");
+  welcomeMsg.id = "welcome-msg";
+  welcomeMsg.textContent = `Welcome, ${email}`;
+  welcomeMsg.style.color = "white";
+  welcomeMsg.style.marginLeft = "12px";
+  navContainer.appendChild(welcomeMsg);
+});
+
+// REGISTER FORM
+document.getElementById("register-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+  const name = document.getElementById("register-name").value;
+  alert("Registration complete! (Demo only)");
+  registerModal.style.display = "none";
+
+  // Hide login/register buttons
+  loginBtn.style.display = "none";
+  registerBtn.style.display = "none";
+
+  // Show welcome message
+  const welcomeMsg = document.createElement("span");
+  welcomeMsg.id = "welcome-msg";
+  welcomeMsg.textContent = `Welcome, ${name}`;
+  welcomeMsg.style.color = "white";
+  welcomeMsg.style.marginLeft = "12px";
+  navContainer.appendChild(welcomeMsg);
+});
+
