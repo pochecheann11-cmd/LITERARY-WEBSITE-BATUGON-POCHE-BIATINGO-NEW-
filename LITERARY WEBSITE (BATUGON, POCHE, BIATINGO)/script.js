@@ -135,7 +135,7 @@ function openModal(category, index) {
 closeModal.onclick = () => modal.style.display = "none";
 window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
 
-// --- RATING ---
+// --- RATINGS ---
 function renderStars(category, index) {
   const key = `${category}-${index}`;
   const rating = localStorage.getItem(`rating-${key}`) || 0;
@@ -203,7 +203,7 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
   loginBtn.style.display = "none";
   registerBtn.style.display = "none";
 
-  // Show welcome message
+  // SHOW  WELCOME MESSAGE
   const welcomeMsg = document.createElement("span");
   welcomeMsg.id = "welcome-msg";
   welcomeMsg.textContent = `Welcome, ${name}`;
@@ -211,6 +211,7 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
   welcomeMsg.style.marginLeft = "12px";
   navContainer.appendChild(welcomeMsg);
 });
+
 
 
 
