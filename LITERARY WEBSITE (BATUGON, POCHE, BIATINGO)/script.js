@@ -11,7 +11,7 @@ const works = {
       title: "Moonlight Soliloquy",
       author: "Aria Domingo",
       content: "The moon listens to the heart’s quiet songs, unspoken yet heard by the stars above...",
-      image: "https://images.unsplash.com/photo-1526403224057-1d3c190e9f47?auto=format&fit=crop&w=600&q=80"
+      image: "https://www.pixelstalk.net/wp-content/uploads/2016/07/Download-Free-Pictures-3840x2160.jpg"
     }
   ],
   fiction: [
@@ -211,4 +211,5 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
   welcomeMsg.style.marginLeft = "12px";
   navContainer.appendChild(welcomeMsg);
 });
+
 
