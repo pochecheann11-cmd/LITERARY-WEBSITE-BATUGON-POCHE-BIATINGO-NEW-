@@ -33,7 +33,7 @@ const works = {
       title: "Letters from the Mountains",
       author: "Carlos Marquez",
       content: "Reflections on solitude, resilience, and the enduring beauty of the mountains that shaped my youth...",
-      image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+      image: "https://images.stockcake.com/public/2/f/e/2fed787b-9250-4c20-8fd6-52b1e1464245_large/focused-clockmaker-working-stockcake.jpg"
     }
   ],
   essays: [
@@ -211,6 +211,7 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
   welcomeMsg.style.marginLeft = "12px";
   navContainer.appendChild(welcomeMsg);
 });
+
 
 
 
