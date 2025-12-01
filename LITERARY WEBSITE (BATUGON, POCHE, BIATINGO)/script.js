@@ -57,7 +57,7 @@ const works = {
       title: "The Sparrow and the Storm",
       author: "F. Dela Cruz",
       content: "A small sparrow learns that even the fiercest storm bows to persistence and courage...",
-      image: "https://images.unsplash.com/photo-1496497243327-4f4ee9c6d408?auto=format&fit=crop&w=600&q=80"
+      image: "https://tse2.mm.bing.net/th/id/OIP.aGQsPiFJIuLCgpWvcUMFFgHaL6?rs=1&pid=ImgDetMain&o=7&rm=3"
     }
   ]
 };
@@ -211,6 +211,7 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
   welcomeMsg.style.marginLeft = "12px";
   navContainer.appendChild(welcomeMsg);
 });
+
 
 
 
