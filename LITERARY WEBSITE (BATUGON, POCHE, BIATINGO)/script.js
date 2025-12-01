@@ -25,7 +25,7 @@ const works = {
       title: "The Mirror Town",
       author: "Rico Alonzo",
       content: "A young woman discovers a world inside mirrors, where her reflection has a life of its own...",
-      image: "https://images.stockcake.com/public/a/b/5/ab5a1394-2b7e-4386-b4a0-313e21b74b76_large/artisan-at-work-stockcake.jpg"
+      image: "https://i.pinimg.com/736x/f8/f8/db/f8f8db2246f60363902f6cda1c1aed58.jpg"
     }
   ],
   "non-fiction": [
@@ -211,6 +211,7 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
   welcomeMsg.style.marginLeft = "12px";
   navContainer.appendChild(welcomeMsg);
 });
+
 
 
 
