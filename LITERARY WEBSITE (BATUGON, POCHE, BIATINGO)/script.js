@@ -41,7 +41,7 @@ const works = {
       title: "The Art of Being Still",
       author: "E. Santos",
       content: "Modern life praises motion, yet stillness teaches us what true presence means...",
-      image: "https://images.unsplash.com/photo-1526481280691-3d71e36a6979?auto=format&fit=crop&w=600&q=80"
+      image: "https://www.teachersuperstore.com.au/assets/thumbL/9780473611644.jpg?20221103185402"
     }
   ],
   "short-story": [
@@ -211,6 +211,7 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
   welcomeMsg.style.marginLeft = "12px";
   navContainer.appendChild(welcomeMsg);
 });
+
 
 
 
