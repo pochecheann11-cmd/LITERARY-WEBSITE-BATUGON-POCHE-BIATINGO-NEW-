@@ -19,7 +19,7 @@ const works = {
       title: "The Clockmaker's Secret",
       author: "J. M. De Luna",
       content: "In a small town where time stood still, a clockmaker hides a secret that could change eternity itself...",
-      image: " https://images.stockcake.com/public/a/3/a/a3ac3690-9f58-420d-8d1b-ee76ea039e84_large/clockmaker-repairing-timepiece-stockcake.jpg"
+      image: "https://www.listchallenges.com/f/lists/ee19856b-8760-48d0-9d06-b8d286bad19a.jpg"
     },
     {
       title: "The Mirror Town",
@@ -211,6 +211,7 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
   welcomeMsg.style.marginLeft = "12px";
   navContainer.appendChild(welcomeMsg);
 });
+
 
 
 
