@@ -5,7 +5,7 @@ const works = {
       title: "Echoes of the Soul",
       author: "Luna Rivera",
       content: "In the quiet of the night, the soul whispers untold dreams that float like fireflies in the dark...",
-      image: "https://www.pixelstalk.net/wp-content/uploads/2016/07/Download-Free-Pictures-3840x2160.jpg"
+      image: "https://d1e8vjamx1ssze.cloudfront.net/product-images/poetrybook-21.webp"
     },
     {
       title: "Moonlight Soliloquy",
@@ -211,6 +211,7 @@ document.getElementById("register-form").addEventListener("submit", (e) => {
   welcomeMsg.style.marginLeft = "12px";
   navContainer.appendChild(welcomeMsg);
 });
+
 
 
 
