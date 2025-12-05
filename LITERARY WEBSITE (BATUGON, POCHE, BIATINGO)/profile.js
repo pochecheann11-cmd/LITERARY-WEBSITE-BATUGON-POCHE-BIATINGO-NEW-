@@ -1,0 +1,142 @@
+// profile.js
+document.addEventListener("DOMContentLoaded", () => {
+  const profileBtn = document.getElementById("profile-btn");
+  const profileModal = document.getElementById("profile-modal");
+  const profileBody = document.getElementById("profile-body");
+  const closeBtns = profileModal.querySelectorAll(".modal-close");
+
+  const userKey = "aspirewrite_user";
+
+  // Default user
+  let user = JSON.parse(localStorage.getItem(userKey)) || {
+    name: "User",
+    bio: "",
+    avatar: "default-avatar.png",
+
+    birthday: "",
+    birthdayVisible: "public",
+    location: "",
+    locationVisible: "public",
+    favoriteGenres: "",
+    favoriteGenresVisible: "public",
+    social: "",
+    socialVisible: "public"
+  };
+
+  function renderProfile() {
+    profileBody.innerHTML = `
+      <div class="profile-card">
+
+        <!-- PROFILE PICTURE -->
+        <div class="avatar-preview">
+          <img id="avatar-img" src="${user.avatar}">
+        </div>
+
+        <label>Change Profile Picture:
+          <input type="file" id="avatar-input" accept="image/*">
+        </label>
+
+        <!-- NAME + BIO -->
+        <label>Name (Required)
+          <input type="text" id="name-input" value="${user.name}">
+        </label>
+
+        <label>Bio
+          <textarea id="bio-input">${user.bio}</textarea>
+        </label>
+
+        <hr>
+
+        <!-- OPTIONAL INFO -->
+
+        
+        <label>Birthday (Optional)
+          <input type="date" id="birthday-input" value="${user.birthday}">
+          <select id="birthday-visibility">
+            <option value="public" ${user.birthdayVisible==="public"?"selected":""}>Public</option>
+            <option value="private" ${user.birthdayVisible==="private"?"selected":""}>Only Me</option>
+          </select>
+        </label>
+
+        <label>Location (Optional)
+          <input type="text" id="location-input" value="${user.location}">
+          <select id="location-visibility">
+            <option value="public" ${user.locationVisible==="public"?"selected":""}>Public</option>
+            <option value="private" ${user.locationVisible==="private"?"selected":""}>Only Me</option>
+          </select>
+        </label>
+
+        <label>Favorite Genres (Optional)
+          <input type="text" id="favoriteGenres-input" value="${user.favoriteGenres}">
+          <select id="favoriteGenres-visibility">
+            <option value="public" ${user.favoriteGenresVisible==="public"?"selected":""}>Public</option>
+            <option value="private" ${user.favoriteGenresVisible==="private"?"selected":""}>Only Me</option>
+          </select>
+        </label>
+
+        <label>Social Link (Optional)
+          <input type="url" id="social-input" value="${user.social}">
+          <select id="social-visibility">
+            <option value="public" ${user.socialVisible==="public"?"selected":""}>Public</option>
+            <option value="private" ${user.socialVisible==="private"?"selected":""}>Only Me</option>
+          </select>
+        </label>
+
+        <hr>
+
+        <button id="save-profile-btn" class="btn primary full">Save Changes</button>
+        <button id="logout-btn" class="btn danger full" style="margin-top:10px;">Log Out</button>
+      </div>
+    `;
+
+    /** PROFILE IMAGE **/    
+    const avatarImg = document.getElementById("avatar-img");
+    const avatarInput = document.getElementById("avatar-input");
+    avatarInput.addEventListener("change", () => {
+      const file = avatarInput.files[0];
+      const reader = new FileReader();
+      reader.onload = e => avatarImg.src = e.target.result;
+      reader.readAsDataURL(file);
+    });
+
+    /** SAVE CHANGES **/
+    document.getElementById("save-profile-btn").addEventListener("click", () => {
+      user.avatar = avatarImg.src;
+      user.name = document.getElementById("name-input").value.trim();
+      user.bio = document.getElementById("bio-input").value.trim();
+
+      user.birthday = document.getElementById("birthday-input").value;
+      user.birthdayVisible = document.getElementById("birthday-visibility").value;
+
+      user.location = document.getElementById("location-input").value.trim();
+      user.locationVisible = document.getElementById("location-visibility").value;
+
+      user.favoriteGenres = document.getElementById("favoriteGenres-input").value.trim();
+      user.favoriteGenresVisible = document.getElementById("favoriteGenres-visibility").value;
+
+      user.social = document.getElementById("social-input").value.trim();
+      user.socialVisible = document.getElementById("social-visibility").value;
+
+      localStorage.setItem(userKey, JSON.stringify(user));
+      alert("Profile Saved!");
+      profileModal.classList.remove("active");
+    });
+
+    /** LOG OUT **/
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      localStorage.removeItem(userKey);
+      alert("Logged out!");
+      document.getElementById("profile-btn").style.display = "none";
+      document.getElementById("login-btn").style.display = "inline-block";
+      document.getElementById("register-btn").style.display = "inline-block";
+      profileModal.classList.remove("active");
+    });
+  }
+
+  profileBtn.addEventListener("click", () => {
+    renderProfile();
+    profileModal.classList.add("active");
+  });
+
+  closeBtns.forEach(btn => btn.addEventListener("click", () => profileModal.classList.remove("active")));
+});
